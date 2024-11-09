@@ -1,24 +1,36 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 public class QuestionGenerator : MonoBehaviour
 {
-    public static QuestionGenerator Instance;
+    //public static QuestionGenerator Instance;
 
-    public GameObject screenQuestion;
+    public TMP_Text screenQuestion;
     public GameObject AnswerA;
     public GameObject AnswerB;
     public GameObject AnswerC;
     public GameObject AnswerD;
-    public static string NewQuestion = "";
-    public static string newA = "";
-    public static string newB = "";
-    public static string newC = "";
-    public static string newD = "";
+
+    public string NewQuestion = "";
+    string newA = "";
+    string newB = "";
+    string newC = "";
+    string newD = "";
+
+    string actualAnswer;
+    public int questionNumber;
+    public TextAsset textFile;
+
+    private int numberOfQuestions;
+    private string[] lines;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        lines = textFile.text.Split('\n');
+        numberOfQuestions = (lines.Length - 5) / 6;
     }
 
     // Update is called once per frame
@@ -27,18 +39,56 @@ public class QuestionGenerator : MonoBehaviour
         
     }
 
-    public void StartQuiz()
+    public void GenerateQuestion()
     {
-        StartCoroutine(PushTextOnScreen());
+        RandomQuestion();
+        ReplaceQuestion();
+    }
+    
+    public void RandomQuestion()
+    {
+        questionNumber = Random.Range(1, numberOfQuestions);
+        int questionLine = questionNumber * 6;
+        string[] questionOptions = new string[4];
+        int answerIndex = 0;
+
+        for (int i = 0; i < 4; i++)
+              questionOptions[i] = lines[questionLine + i + 1];
+
+        for (int t = 0; t < questionOptions.Length; t++ )
+        {
+            string tmp = questionOptions[t];
+            int r = Random.Range(t, questionOptions.Length);
+            questionOptions[t] = questionOptions[r];
+            questionOptions[r] = tmp;
+        }
+                
+        for (int i = 0; i < 4; i++)
+            if (questionOptions[i] == lines[questionLine + 1])
+                answerIndex = i;
+
+        NewQuestion = lines[questionLine];
+        newA = "A. " + questionOptions[0];
+        newB = "B. " + questionOptions[1];
+        newC = "C. " + questionOptions[2];
+        newD = "D. " + questionOptions[3];
+        actualAnswer = "";
+        char indexChar = 'A';
+        indexChar += (char)answerIndex;
+        actualAnswer += indexChar;
     }
 
-    IEnumerator PushTextOnScreen()
+    public void ReplaceQuestion()
     {
-        yield return new WaitForSeconds(0.25f);
-        screenQuestion.GetComponent<Text>().text = NewQuestion;
-        AnswerA.GetComponent<Text>().text = newA;
-        AnswerB.GetComponent<Text>().text = newB;
-        AnswerC.GetComponent<Text>().text = newC;
-        AnswerD.GetComponent<Text>().text = newD;
+        screenQuestion.GetComponent<TMP_Text>().text = NewQuestion;
+        AnswerA.GetComponent<TMP_Text>().text = newA;
+        AnswerB.GetComponent<TMP_Text>().text = newB;
+        AnswerC.GetComponent<TMP_Text>().text = newC;
+        AnswerD.GetComponent<TMP_Text>().text = newD;
+    }
+
+    public void CheckAnswer(string chosenAnswer)
+    {
+
     }
 }

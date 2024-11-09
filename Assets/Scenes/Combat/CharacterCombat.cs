@@ -12,7 +12,7 @@ public class CharacterCombat : MonoBehaviour
     public int mana;
 
     public Slider hpBar;
-    public Slider manaBar;
+    //public Slider manaBar;
 
     public string type;
 
@@ -23,7 +23,7 @@ public class CharacterCombat : MonoBehaviour
         hpBar.maxValue = hpBar.value = maxHP;
         
         mana = maxMana;
-        manaBar.maxValue = manaBar.value = maxMana;
+        //manaBar.maxValue = manaBar.value = maxMana;
     }
 
     // Update is called once per frame

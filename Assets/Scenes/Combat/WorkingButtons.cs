@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class WorkingButtons : MonoBehaviour
 {
-    public GameObject answerAbackBlue;
+    /*public GameObject answerAbackBlue;
     public GameObject answerAbackGreen;
     public GameObject answerAbackRed;
     public GameObject answerBbackBlue;
@@ -99,5 +99,4 @@ public class WorkingButtons : MonoBehaviour
         }
     }
     */
-   
 }

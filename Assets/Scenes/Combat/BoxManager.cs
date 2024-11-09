@@ -34,7 +34,5 @@ public class BoxManager : MonoBehaviour
         combatBox.SetActive(false);
         quizBox.SetActive(true);
 
-        RandomQuestion.DisplayQuestion = true;
-        QuestionGenerator.Instance.StartQuiz();
     }
 }
