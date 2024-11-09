@@ -1,0 +1,23 @@
+// ATENTIE!!!
+// In acest fisier, primul raspuns e mereu cel corect. Ele vor fi shuffled in script
+// astfel incat sa nu fie primul raspuns mereu cel corect.
+//
+// NU lasati enter-uri la final de fisier!!
+
+Cate cafele este Teo capabila sa bea?
+Foarte multe (6-7)
+Cateva (2-3)
+Niciuna
+Multe (4-5)
+
+Ce mananca Andru?
+Subway
+Caini
+Rata
+Pufuleti
+
+Ce fac azi si maine si poimaine si raspoimaine?
+codez
+plang
+disper
+lesin

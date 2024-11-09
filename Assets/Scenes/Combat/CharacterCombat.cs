@@ -14,6 +14,8 @@ public class CharacterCombat : MonoBehaviour
     public Slider hpBar;
     public Slider manaBar;
 
+    public string type;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -48,6 +50,12 @@ public class CharacterCombat : MonoBehaviour
     {
         //TakeDamage(15);
         enemy.TakeDamage(15);
+
+        if (type == "player")
+        {
+            RandomQuestion.DisplayQuestion = true;
+            QuestionGenerator.Instance.StartQuiz();
+        }
     }
 
     public void Die()

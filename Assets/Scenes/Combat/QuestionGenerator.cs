@@ -3,26 +3,33 @@ using UnityEngine;
 using UnityEngine.UI;
 public class QuestionGenerator : MonoBehaviour
 {
+    public static QuestionGenerator Instance;
+
     public GameObject screenQuestion;
     public GameObject AnswerA;
     public GameObject AnswerB;
     public GameObject AnswerC;
     public GameObject AnswerD;
-    public static string NewQuestion;
-    public static string newA;
-    public static string newB;
-    public static string newC;
-    public static string newD;
+    public static string NewQuestion = "";
+    public static string newA = "";
+    public static string newB = "";
+    public static string newC = "";
+    public static string newD = "";
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        StartCoroutine(PushTextOnScreen());
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void StartQuiz()
+    {
+        StartCoroutine(PushTextOnScreen());
     }
 
     IEnumerator PushTextOnScreen()
