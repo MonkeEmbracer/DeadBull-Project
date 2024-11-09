@@ -8,6 +8,8 @@ public class TocilescuSpreDreaptaUI : MonoBehaviour
     private Vector2 targetPosition;
     private bool moving = true;
 
+    public tocilescu_movement tocilescumovementscript;
+
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -34,6 +36,7 @@ public class TocilescuSpreDreaptaUI : MonoBehaviour
             if (Vector2.Distance(rectTransform.anchoredPosition, targetPosition) < 0.01f)
             {
                 moving = false;  // Stop moving once we reach the target
+                tocilescumovementscript.EnableMovement();
             }
         }
     }
