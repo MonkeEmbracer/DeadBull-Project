@@ -50,12 +50,6 @@ public class CharacterCombat : MonoBehaviour
     {
         //TakeDamage(15);
         enemy.TakeDamage(15);
-
-        if (type == "player")
-        {
-            RandomQuestion.DisplayQuestion = true;
-            QuestionGenerator.Instance.StartQuiz();
-        }
     }
 
     public void Die()
