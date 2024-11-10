@@ -420,6 +420,7 @@ MonoBehaviour:
   hpBar: {fileID: 2141217710}
   hpText: {fileID: 1154091462}
   isPlayer: 0
+  fallSpeed: -0.13
 --- !u!95 &129019936
 Animator:
   serializedVersion: 7
@@ -4560,8 +4561,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3197e813b0eb3a4b924816ded13dcd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatie: {fileID: 2123812005}
-  activeDuration: 0.9
   optionA: {fileID: 968318669}
   optionB: {fileID: 393187847}
   optionC: {fileID: 848748088}
@@ -4590,6 +4589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 435ff53342273414780ccbc96ff3201d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animatie: {fileID: 2123812005}
   targetObject: {fileID: 1192502915}
   activeDuration: 0.9
   player: {fileID: 1855678794}
@@ -4758,7 +4758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1747646291
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4775,8 +4775,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 314.40833, y: -290.56665}
-  m_SizeDelta: {x: 228.56, y: 101.78}
+  m_AnchoredPosition: {x: 314.4, y: -260.4}
+  m_SizeDelta: {x: 246.99, y: 160.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1747646292
 MonoBehaviour:
@@ -4854,7 +4854,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5402589930447352277, guid: 428058e42e2410f46ab4e6349114af2b, type: 3}
+  m_Sprite: {fileID: -8087204541898988581, guid: a8e603a47dae9374697c9efac4815957, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5086,6 +5086,7 @@ MonoBehaviour:
   hpBar: {fileID: 603813395}
   hpText: {fileID: 1441280012}
   isPlayer: 1
+  fallSpeed: -0.13
 --- !u!212 &1855678795
 SpriteRenderer:
   m_ObjectHideFlags: 0

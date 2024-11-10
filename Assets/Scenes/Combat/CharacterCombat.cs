@@ -24,10 +24,12 @@ public class CharacterCombat : MonoBehaviour
 
     public bool isPlayer;
 
+    public float fallSpeed; 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        HP = maxHP;
+        HP = maxHP = 0;
         hpBar.maxValue = hpBar.value = maxHP;
         
         mana = maxMana;
@@ -41,7 +43,8 @@ public class CharacterCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (HP == 0)
+            DieAnimation();
     }
 
     private string IntToString(int x)
@@ -88,8 +91,12 @@ public class CharacterCombat : MonoBehaviour
         enemy.TakeDamage(damage);
     }
 
-    public void Die()
+    public void DieAnimation()
     {
-        
+        Vector3 pos = gameObject.transform.position;
+        pos.y += fallSpeed;
+        gameObject.transform.position = pos;
+        //gameObject.transform.position += (0, fallSpeed);
+        //Transform transform.position 
     }
 }

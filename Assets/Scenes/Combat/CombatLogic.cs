@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 public class CombatLogic : MonoBehaviour
 {
     public static CombatLogic Instance;
+    public GameObject animatie;
+   
 
     public GameObject targetObject; // Asignează GameObject-ul în Inspector
     public float activeDuration = 2.0f;
@@ -55,7 +57,7 @@ public class CombatLogic : MonoBehaviour
         nextToEnemyTurn.SetActive(true);
 
         
-
+        StartCoroutine(ActivateForSeconds1());
         string damageString = "You have dealt " + IntToString(player.damage) + " damage!";
         if (player.damage >= 24) // MUST change this later!!
             damageString += "\nKnowledge power!";
@@ -106,5 +108,11 @@ public class CombatLogic : MonoBehaviour
         targetObject.SetActive(true); // Activează obiectul
         yield return new WaitForSeconds(activeDuration); // Așteaptă durata specificată
         targetObject.SetActive(false); // Dezactivează obiectul
+    } 
+    public IEnumerator ActivateForSeconds1()
+    {
+        animatie.SetActive(true); // Activează obiectul
+        yield return new WaitForSeconds(activeDuration); // Așteaptă durata specificată
+        animatie.SetActive(false); // Dezactivează obiectul
     }
 }
