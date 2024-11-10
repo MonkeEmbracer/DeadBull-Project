@@ -72,6 +72,17 @@ public class CheckAnswer : MonoBehaviour
 
             wrong.SetActive(true);
 
+            if (QuestionGenerator.actualAnswer == "A")
+                correct = correctA;
+            else if (QuestionGenerator.actualAnswer == "B")
+                correct = correctB;
+            else if (QuestionGenerator.actualAnswer == "C")
+                correct = correctC;
+            else if (QuestionGenerator.actualAnswer == "D")
+                correct = correctD;
+
+            correct.SetActive(true);
+
             player.correctAnswer = false;
         }
         else
