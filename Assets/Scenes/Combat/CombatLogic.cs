@@ -1,10 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
+
 
 public class CombatLogic : MonoBehaviour
 {
     public static CombatLogic Instance;
+
+    public GameObject targetObject; // Asignează GameObject-ul în Inspector
+    public float activeDuration = 2.0f;
 
     public CharacterCombat player;
     public CharacterCombat enemy;
@@ -47,6 +52,8 @@ public class CombatLogic : MonoBehaviour
         nextToAttack.SetActive(false);
         nextToEnemyTurn.SetActive(true);
 
+        StartCoroutine(ActivateForSeconds());
+
         string damageString = "You have dealt " + IntToString(player.damage) + " damage!";
         explanation.GetComponent<TMP_Text>().text = damageString;
     }
@@ -66,5 +73,12 @@ public class CombatLogic : MonoBehaviour
     {
         nextToPlayerTurn.SetActive(false);
         gameObject.GetComponent<BoxManager>().Start();
+    }
+
+    public IEnumerator ActivateForSeconds()
+    {
+        targetObject.SetActive(true); // Activează obiectul
+        yield return new WaitForSeconds(activeDuration); // Așteaptă durata specificată
+        targetObject.SetActive(false); // Dezactivează obiectul
     }
 }

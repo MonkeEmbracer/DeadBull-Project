@@ -1,8 +1,12 @@
 using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
 
 public class CheckAnswer : MonoBehaviour
 {
+    public GameObject animatie;
+    public float activeDuration = 2.0f;
+
     public GameObject optionA;
     public GameObject optionB;
     public GameObject optionC;
@@ -84,6 +88,15 @@ public class CheckAnswer : MonoBehaviour
             correct.SetActive(true);
 
             player.correctAnswer = true;
+             StartCoroutine(ActivateForSeconds());
         }
+    }
+
+    private IEnumerator ActivateForSeconds()
+    {
+        animatie.SetActive(true);
+        yield return new WaitForSeconds(activeDuration);
+        animatie.SetActive(false);
+
     }
 }
