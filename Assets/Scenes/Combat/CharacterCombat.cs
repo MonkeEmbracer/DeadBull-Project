@@ -11,6 +11,12 @@ public class CharacterCombat : MonoBehaviour
     public int HP;
     public int mana;
 
+    public int minDamage;
+    public int maxDamage;
+    public int damage;
+
+    public bool correctAnswer;
+
     public Slider hpBar;
     //public Slider manaBar;
 
@@ -24,6 +30,8 @@ public class CharacterCombat : MonoBehaviour
         
         mana = maxMana;
         //manaBar.maxValue = manaBar.value = maxMana;
+        
+        correctAnswer = false;
     }
 
     // Update is called once per frame
@@ -48,8 +56,15 @@ public class CharacterCombat : MonoBehaviour
 
     public void Attack()
     {
-        //TakeDamage(15);
-        enemy.TakeDamage(15);
+        damage = Random.Range(minDamage, maxDamage);
+
+        if (correctAnswer == true)
+        {
+            correctAnswer = false;
+            damage *= 3;
+        }
+
+        enemy.TakeDamage(damage);
     }
 
     public void Die()

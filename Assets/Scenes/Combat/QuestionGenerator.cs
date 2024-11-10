@@ -91,9 +91,4 @@ public class QuestionGenerator : MonoBehaviour
         AnswerD.GetComponent<TMP_Text>().text = newD;
         explanation.GetComponent<TMP_Text>().text = explanationText;
     }
-
-    public void CheckAnswer(string chosenAnswer)
-    {
-
-    }
 }
