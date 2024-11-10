@@ -3118,7 +3118,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -199}
+  m_AnchoredPosition: {x: 0, y: -205}
   m_SizeDelta: {x: 200, y: 46.89}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1062042380
@@ -3143,8 +3143,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Cate cafele voi bea azi?
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 635dab8c04d2c2a42b97992a9a939819, type: 2}
-  m_sharedMaterial: {fileID: -1762403885962658061, guid: 635dab8c04d2c2a42b97992a9a939819, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 993539ff14ca7814986a6422c39e45ba, type: 2}
+  m_sharedMaterial: {fileID: -8372137357825229975, guid: 993539ff14ca7814986a6422c39e45ba, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3168,8 +3168,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27
-  m_fontSizeBase: 27
+  m_fontSize: 25
+  m_fontSizeBase: 25
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3699,6 +3699,7 @@ MonoBehaviour:
   itemButton: {fileID: 30503528}
   quizCanvas1: {fileID: 1974722394}
   quizCanvas2: {fileID: 973146837}
+  nextToExplanation: {fileID: 1747646290}
 --- !u!114 &1491409100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4019,13 +4020,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1491409093}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1491409099}
+        m_TargetAssemblyTypeName: BoxManager, Assembly-CSharp
+        m_MethodName: ShowExplanation
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5007,7 +5008,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2091634103}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1491409093}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2091634103
 MonoBehaviour:
   m_ObjectHideFlags: 0

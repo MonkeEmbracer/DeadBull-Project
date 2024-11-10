@@ -1,8 +1,9 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BoxManager : MonoBehaviour
 {
-    public static BoxManager Instance;
+    //public static BoxManager Instance;
 
     public GameObject combatBox;
     public GameObject quizBox;
@@ -13,6 +14,7 @@ public class BoxManager : MonoBehaviour
     
     public GameObject quizCanvas1;
     public GameObject quizCanvas2;
+    public GameObject nextToExplanation;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,6 +40,7 @@ public class BoxManager : MonoBehaviour
         quizBox.SetActive(true);
         quizCanvas1.SetActive(true);
         quizCanvas2.SetActive(false);
+        nextToExplanation.SetActive(false);
     }
 
     public void ShowExplanation()

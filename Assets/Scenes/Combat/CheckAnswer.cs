@@ -22,12 +22,11 @@ public class CheckAnswer : MonoBehaviour
     public GameObject correctC;
     public GameObject correctD;
 
-    private BoxManager boxManager;
+    private bool answered;
 
     void Start()
     {
-        //wrong = transform.GetChild(0).gameObject;
-        //wrong.SetActive(true);
+        answered = false;
     }
 
     void Update()
@@ -37,7 +36,12 @@ public class CheckAnswer : MonoBehaviour
 
     public void Check(string selectedOption)
     {
-        
+        if (answered == true)
+            return;
+
+        answered = true;
+        gameObject.GetComponent<BoxManager>().nextToExplanation.SetActive(true);
+
         GameObject currentOption;
         if (selectedOption == "A")
             currentOption = optionA;
