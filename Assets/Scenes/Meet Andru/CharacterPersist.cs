@@ -3,23 +3,28 @@ using UnityEngine.SceneManagement;
 
 public class CharacterPersist : MonoBehaviour
 {
-    private static bool shouldPersist = false;
-    public string nextSceneName;  // Scene to load upon collision
+    // Variable to hold the position of the character
+    private static Vector3 characterPosition;
 
-    void Awake()
+    void Start()
     {
-        // Ensure only this object persists upon transitioning
-        if (shouldPersist)
+        // If the character is already persisted, set it to the stored position
+        if (SceneManager.GetActiveScene().name != "Meet Andru")
         {
-            DontDestroyOnLoad(gameObject);
-            shouldPersist = false; // Reset the flag after the transition
+            transform.position = characterPosition;
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void Persist()
     {
-        // Start persistence and load the next scene upon collision
-        shouldPersist = true;
-        SceneManager.LoadScene(nextSceneName);
+        // Save the character's current position before switching scenes
+        characterPosition = transform.position;
+        DontDestroyOnLoad(gameObject);  // This will keep the character in the new scene
+    }
+
+    public void DestroyOnSceneLoad()
+    {
+        // Destroy the persistent character when the scene changes
+        Destroy(gameObject);
     }
 }
