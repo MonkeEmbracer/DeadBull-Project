@@ -19,7 +19,7 @@ public class QuestionGenerator : MonoBehaviour
     string newC = "";
     string newD = "";
 
-    string actualAnswer;
+    public static string actualAnswer;
     public int questionNumber;
     public TextAsset textFile;
 
@@ -30,7 +30,7 @@ public class QuestionGenerator : MonoBehaviour
     void Start()
     {
         lines = textFile.text.Split('\n');
-        numberOfQuestions = (lines.Length - 5) / 6;
+        numberOfQuestions = (lines.Length - 5) / 7;
     }
 
     // Update is called once per frame
@@ -48,7 +48,7 @@ public class QuestionGenerator : MonoBehaviour
     public void RandomQuestion()
     {
         questionNumber = Random.Range(1, numberOfQuestions);
-        int questionLine = questionNumber * 6;
+        int questionLine = questionNumber * 7 + 6;
         string[] questionOptions = new string[4];
         int answerIndex = 0;
 
