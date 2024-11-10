@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class CharacterCombat : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class CharacterCombat : MonoBehaviour
     public bool correctAnswer;
 
     public Slider hpBar;
+    public GameObject hpText;
     //public Slider manaBar;
 
     public string type;
@@ -32,12 +34,30 @@ public class CharacterCombat : MonoBehaviour
         //manaBar.maxValue = manaBar.value = maxMana;
         
         correctAnswer = false;
+
+        hpText.GetComponent<TMP_Text>().text = IntToString(HP) + "/" + IntToString(maxHP);
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+
+    private string IntToString(int x)
+    {
+        string str1 = "", str2 = "";
+
+        do
+        {
+            str2 += (char)(x % 10 + '0');
+            str2 += str1;
+            (str1, str2) = (str2, str1);
+            str2 = "";
+            x /= 10;
+        }while (x > 0);
+
+        return str1;
     }
 
     public void TakeDamage(int damage)
@@ -52,6 +72,8 @@ public class CharacterCombat : MonoBehaviour
             HP = maxHP;
 
         hpBar.value = HP;
+
+        hpText.GetComponent<TMP_Text>().text = IntToString(HP) + "/" + IntToString(maxHP);
     }
 
     public void Attack()

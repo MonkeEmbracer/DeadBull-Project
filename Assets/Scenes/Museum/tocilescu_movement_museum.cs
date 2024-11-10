@@ -77,7 +77,7 @@ public class tocilescu_movement_museum : MonoBehaviour
         }
     }
 
-    public string requested_scene = "Museum";
+    public string requested_scene = "Combat";
     private void OnTriggerEnter2D(Collider2D collision){
        
         SceneManager.LoadScene(requested_scene);

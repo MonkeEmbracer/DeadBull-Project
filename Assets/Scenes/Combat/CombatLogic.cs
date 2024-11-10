@@ -52,9 +52,11 @@ public class CombatLogic : MonoBehaviour
         nextToAttack.SetActive(false);
         nextToEnemyTurn.SetActive(true);
 
-        StartCoroutine(ActivateForSeconds());
+        
 
         string damageString = "You have dealt " + IntToString(player.damage) + " damage!";
+        if (player.damage >= 24) // MUST change this later!!
+            damageString += "\nKnowledge power!";
         explanation.GetComponent<TMP_Text>().text = damageString;
     }
 
@@ -64,6 +66,7 @@ public class CombatLogic : MonoBehaviour
 
         nextToEnemyTurn.SetActive(false);
         nextToPlayerTurn.SetActive(true);
+        StartCoroutine(ActivateForSeconds());
 
         string damageString = "Your opponent has struck for " + IntToString(enemy.damage) + " damage!";
         explanation.GetComponent<TMP_Text>().text = damageString;
