@@ -22,7 +22,7 @@ public class CharacterCombat : MonoBehaviour
     public GameObject hpText;
     //public Slider manaBar;
 
-    public string type;
+    public bool isPlayer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -66,7 +66,6 @@ public class CharacterCombat : MonoBehaviour
         if (HP < 0)
         {
             HP = 0;
-            Die();
         }
         else if (HP >= maxHP)
             HP = maxHP;
@@ -91,6 +90,6 @@ public class CharacterCombat : MonoBehaviour
 
     public void Die()
     {
-
+        
     }
 }

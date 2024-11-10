@@ -16,6 +16,7 @@ public class BoxManager : MonoBehaviour
     public GameObject quizCanvas2;
     public GameObject nextToExplanation;
     public GameObject nextToAttack;
+    //public GameObject respawnButton;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void Start()

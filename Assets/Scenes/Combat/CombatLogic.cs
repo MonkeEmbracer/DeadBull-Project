@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 
 public class CombatLogic : MonoBehaviour
@@ -17,6 +18,7 @@ public class CombatLogic : MonoBehaviour
     public GameObject nextToAttack;
     public GameObject nextToEnemyTurn;
     public GameObject nextToPlayerTurn;
+    public GameObject respawnButton;
     public GameObject explanation;
 
     void Start()
@@ -62,6 +64,14 @@ public class CombatLogic : MonoBehaviour
 
     public void EnemyAttack()
     {
+        if (enemy.HP <= 0)
+        {   
+            explanation.GetComponent<TMP_Text>().text = "You won! To be continued... ;)";
+            nextToEnemyTurn.SetActive(false);
+            //respawnButton.SetActive(true);
+            return;
+        }
+
         enemy.Attack();
 
         nextToEnemyTurn.SetActive(false);
@@ -74,8 +84,21 @@ public class CombatLogic : MonoBehaviour
 
     public void BackToPlayerTurn()
     {
+        if (player.HP <= 0)
+        {
+            explanation.GetComponent<TMP_Text>().text = "You died!\n.";
+            nextToPlayerTurn.SetActive(false);
+            respawnButton.SetActive(true);
+            return;
+        }
+
         nextToPlayerTurn.SetActive(false);
         gameObject.GetComponent<BoxManager>().Start();
+    }
+
+    public void Respawn()
+    {
+        SceneManager.LoadScene(1);
     }
 
     public IEnumerator ActivateForSeconds()

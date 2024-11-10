@@ -34,10 +34,10 @@ public class comicScript : MonoBehaviour
         {
             ShowPage(i); // Afișează imaginea corespunzătoare paginii
         }
-        //else  
-        //{
-         //   SceneManager.LoadScene(nrnr); // Încarcă scena următoare după ce comic-ul s-a terminat
-       // }
+        else  
+        {
+            SceneManager.LoadScene(nrnr); // Încarcă scena următoare după ce comic-ul s-a terminat
+        }
     }
 
     private void ShowPage(int j)
