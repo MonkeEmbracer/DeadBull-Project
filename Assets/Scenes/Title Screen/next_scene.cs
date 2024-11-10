@@ -19,6 +19,6 @@ public class next_scene : MonoBehaviour
 
     public void ceva()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(4);
     }
 }

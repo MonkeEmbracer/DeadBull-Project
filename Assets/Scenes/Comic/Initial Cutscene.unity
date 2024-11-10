@@ -546,7 +546,7 @@ MonoBehaviour:
   - {fileID: 1056356974}
   - {fileID: 1991098095}
   fundal: {fileID: 269147661}
-  nrnr: 0
+  nrnr: 1
 --- !u!4 &367675567
 Transform:
   m_ObjectHideFlags: 0

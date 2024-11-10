@@ -102,7 +102,7 @@ public class CombatLogic : MonoBehaviour
 
     public void Respawn()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     public IEnumerator ActivateForSeconds()
