@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 
-public class tocilescu_movement : MonoBehaviour
+public class tocilescu_movement_museum : MonoBehaviour
 {
     public Sprite front1, front2, front3;
     public Sprite back1, back2, back3;
@@ -31,8 +31,7 @@ public class tocilescu_movement : MonoBehaviour
 
     void Update()
     {
-        if (canMove)
-        {
+        
             Vector2 movement = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")).normalized;
             Vector2 newPosition = rectTransform.anchoredPosition + movement * speed * Time.deltaTime;
 
@@ -42,7 +41,7 @@ public class tocilescu_movement : MonoBehaviour
 
             // Check if object is out of bounds
             
-        }
+        
     }
 
   
@@ -78,10 +77,6 @@ public class tocilescu_movement : MonoBehaviour
         }
     }
 
-    public void EnableMovement()
-    {
-        canMove = true;
-    }
     public string requested_scene = "Museum";
     private void OnTriggerEnter2D(Collider2D collision){
        
