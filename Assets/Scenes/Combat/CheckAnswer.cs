@@ -22,6 +22,8 @@ public class CheckAnswer : MonoBehaviour
     public GameObject correctC;
     public GameObject correctD;
 
+    private BoxManager boxManager;
+
     void Start()
     {
         //wrong = transform.GetChild(0).gameObject;
@@ -73,6 +75,8 @@ public class CheckAnswer : MonoBehaviour
             correct.SetActive(true);
         }
 
+        //boxManager = GetComponent<BoxManager>();  
+        //boxManager.ShowExplanation();
     }
 
     /*public GameObject answerAbackBlue;

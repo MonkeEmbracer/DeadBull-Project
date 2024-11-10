@@ -12,12 +12,14 @@ public class QuestionGenerator : MonoBehaviour
     public GameObject AnswerB;
     public GameObject AnswerC;
     public GameObject AnswerD;
+    public GameObject explanation;
 
-    public string NewQuestion = "";
+    string NewQuestion = "";
     string newA = "";
     string newB = "";
     string newC = "";
     string newD = "";
+    string explanationText = "";
 
     public static string actualAnswer;
     public int questionNumber;
@@ -76,6 +78,8 @@ public class QuestionGenerator : MonoBehaviour
         char indexChar = 'A';
         indexChar += (char)answerIndex;
         actualAnswer += indexChar;
+
+        explanationText = lines[questionLine + 5];
     }
 
     public void ReplaceQuestion()
@@ -85,6 +89,7 @@ public class QuestionGenerator : MonoBehaviour
         AnswerB.GetComponent<TMP_Text>().text = newB;
         AnswerC.GetComponent<TMP_Text>().text = newC;
         AnswerD.GetComponent<TMP_Text>().text = newD;
+        explanation.GetComponent<TMP_Text>().text = explanationText;
     }
 
     public void CheckAnswer(string chosenAnswer)

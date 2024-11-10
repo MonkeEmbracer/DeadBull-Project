@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      IMG_2289_0: 2520501421310803284
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

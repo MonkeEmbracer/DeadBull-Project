@@ -10,6 +10,9 @@ public class BoxManager : MonoBehaviour
     public GameObject attackButton;
     public GameObject abilityButton;
     public GameObject itemButton;
+    
+    public GameObject quizCanvas1;
+    public GameObject quizCanvas2;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,6 +36,13 @@ public class BoxManager : MonoBehaviour
     {
         combatBox.SetActive(false);
         quizBox.SetActive(true);
+        quizCanvas1.SetActive(true);
+        quizCanvas2.SetActive(false);
+    }
 
+    public void ShowExplanation()
+    {
+        quizCanvas1.SetActive(false);
+        quizCanvas2.SetActive(true);
     }
 }
