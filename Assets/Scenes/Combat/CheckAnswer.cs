@@ -64,6 +64,22 @@ public class CheckAnswer : MonoBehaviour
                 wrong = wrongD;
 
             wrong.SetActive(true);
+<<<<<<< Updated upstream
+=======
+
+            if (QuestionGenerator.actualAnswer == "A")
+                correct = correctA;
+            else if (QuestionGenerator.actualAnswer == "B")
+                correct = correctB;
+            else if (QuestionGenerator.actualAnswer == "C")
+                correct = correctC;
+            else if (QuestionGenerator.actualAnswer == "D")
+                correct = correctD;
+
+            correct.SetActive(true);
+
+            player.correctAnswer = false;
+>>>>>>> Stashed changes
         }
         else
         {
@@ -79,6 +95,7 @@ public class CheckAnswer : MonoBehaviour
             correct.SetActive(true);
         }
 
+<<<<<<< Updated upstream
         //boxManager = GetComponent<BoxManager>();  
         //boxManager.ShowExplanation();
     }
@@ -178,6 +195,10 @@ public class CheckAnswer : MonoBehaviour
         else{
             answerBbackRed.SetActive(true);
             answerBbackBlue.SetActive(false);
+=======
+            player.correctAnswer = true;
+            StartCoroutine(ActivateForSeconds());
+>>>>>>> Stashed changes
         }
     }
     */
