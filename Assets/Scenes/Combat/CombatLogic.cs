@@ -70,6 +70,7 @@ public class CombatLogic : MonoBehaviour
         {   
             explanation.GetComponent<TMP_Text>().text = "You won! To be continued... ;)";
             nextToEnemyTurn.SetActive(false);
+            enemy.dead = true;
             //respawnButton.SetActive(true);
             return;
         }
@@ -91,6 +92,7 @@ public class CombatLogic : MonoBehaviour
             explanation.GetComponent<TMP_Text>().text = "You died!\n.";
             nextToPlayerTurn.SetActive(false);
             respawnButton.SetActive(true);
+            player.dead = true;
             return;
         }
 

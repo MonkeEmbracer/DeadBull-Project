@@ -17,6 +17,7 @@ public class CharacterCombat : MonoBehaviour
     public int damage;
 
     public bool correctAnswer;
+    public bool dead;
 
     public Slider hpBar;
     public GameObject hpText;
@@ -29,7 +30,8 @@ public class CharacterCombat : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        HP = maxHP = 0;
+        dead = false;
+        HP = maxHP;
         hpBar.maxValue = hpBar.value = maxHP;
         
         mana = maxMana;
@@ -43,7 +45,7 @@ public class CharacterCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (HP == 0)
+        if (dead)
             DieAnimation();
     }
 

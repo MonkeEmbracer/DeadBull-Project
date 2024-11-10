@@ -417,10 +417,11 @@ MonoBehaviour:
   maxDamage: 23
   damage: 0
   correctAnswer: 0
+  dead: 0
   hpBar: {fileID: 2141217710}
   hpText: {fileID: 1154091462}
   isPlayer: 0
-  fallSpeed: -0.13
+  fallSpeed: -0.11
 --- !u!95 &129019936
 Animator:
   serializedVersion: 7
@@ -627,8 +628,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -597}
-  m_SizeDelta: {x: 1490.71, y: 263.08}
+  m_AnchoredPosition: {x: -4.15, y: -597}
+  m_SizeDelta: {x: 1421.57, y: 263.08}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &346394951
 MonoBehaviour:
@@ -677,10 +678,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 72
+  m_fontSizeBase: 50
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -3463,8 +3464,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294112243
-  m_fontColor: {r: 0.9547169, g: 0.9519639, b: 0.94931287, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5083,10 +5084,11 @@ MonoBehaviour:
   maxDamage: 12
   damage: 0
   correctAnswer: 0
+  dead: 0
   hpBar: {fileID: 603813395}
   hpText: {fileID: 1441280012}
   isPlayer: 1
-  fallSpeed: -0.13
+  fallSpeed: -0.11
 --- !u!212 &1855678795
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5151,7 +5153,7 @@ Transform:
   m_GameObject: {fileID: 1855678793}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.37, y: -0.07, z: 88.29}
+  m_LocalPosition: {x: -3.37, y: -0.07, z: 0}
   m_LocalScale: {x: 0.8562781, y: 0.782605, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
